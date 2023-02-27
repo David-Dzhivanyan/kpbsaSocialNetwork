@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kpbsa-social-network/static/css/main.2fd88bcb.css",
-    "main.js": "/kpbsa-social-network/static/js/main.b7790fce.js",
+    "main.js": "/kpbsa-social-network/static/js/main.54380f22.js",
     "static/js/787.cc27f801.chunk.js": "/kpbsa-social-network/static/js/787.cc27f801.chunk.js",
     "index.html": "/kpbsa-social-network/index.html",
     "static/media/preloader.svg": "/kpbsa-social-network/static/media/preloader.dc7b56ee49c04e169bc75ec04137accb.svg",
     "main.2fd88bcb.css.map": "/kpbsa-social-network/static/css/main.2fd88bcb.css.map",
-    "main.b7790fce.js.map": "/kpbsa-social-network/static/js/main.b7790fce.js.map",
+    "main.54380f22.js.map": "/kpbsa-social-network/static/js/main.54380f22.js.map",
     "787.cc27f801.chunk.js.map": "/kpbsa-social-network/static/js/787.cc27f801.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2fd88bcb.css",
-    "static/js/main.b7790fce.js"
+    "static/js/main.54380f22.js"
   ]
 }
