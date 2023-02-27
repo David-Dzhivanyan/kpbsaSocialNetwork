@@ -9,7 +9,13 @@ const Profile = (props) => {
         <div className={s.img_wrapper}>
           <img src='https://opelik417.github.io/CPBUA-landing-page/assets/logo-light.png'/>
         </div>
-        <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileInfo 
+          profile={props.profile} 
+          status={props.status} 
+          updateStatus={props.updateStatus}
+          isOwner={props.isOwner}
+          savePhoto={props.savePhoto}
+          />
         <MyPostsContainer />
       </div>
     );

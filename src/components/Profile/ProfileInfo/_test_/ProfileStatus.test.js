@@ -22,6 +22,6 @@ describe("ProfileStatus component",()=>{
         act(()=>{
             render(<ProfileStatus status="da" />, container)
         })
-        expect(container.textContent).toBe("da");
+        expect(container.textContent).toBe("status: da");
     });
 });

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer.jsx"
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -64,13 +64,13 @@ let AppContainer = connect(mapStateToProps,{initializeApp}) (App);
 
 let MainApp = (props) => {
   return(
-  <BrowserRouter>
+  <HashRouter >
     <React.StrictMode>
       <Provider store={store}>
         <AppContainer />
       </Provider>
     </React.StrictMode>
-  </BrowserRouter>
+  </HashRouter>
   )
 }
 

@@ -1,4 +1,4 @@
-export const textareaValidatorСreator = (maxLength) => value =>{
+export const textareaValidatorСreator = (maxLength = 100) => value =>{
     let error;
     if(!value) {
         error = "Field is required";

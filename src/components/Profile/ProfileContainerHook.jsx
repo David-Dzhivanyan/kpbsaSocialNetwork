@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Profile from "./Profile.jsx"
 import { connect } from "react-redux";
-import { setUser, receiveStatus, updateStatus} from "../../redux/profile-reducer";
+import { setUser, receiveStatus, updateStatus, savePhoto} from "../../redux/profile-reducer";
 import { useLocation, useNavigate, useParams} from "react-router-dom";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect.js";
 import { compose } from "redux";
 import { Navigate } from "react-router-dom";
-import {getProfile, getStatus} from "../../redux/profile-selectors"
+import {getProfile, getStatus,} from "../../redux/profile-selectors"
 import {getUserId, getIsAuth} from "../../redux/auth-selectors"
 
 const ProfileContainer = (props) => {
-  
+
   const setUserId = () => {
     let userId;
     if(props.router.params.userId){
@@ -26,14 +26,16 @@ const ProfileContainer = (props) => {
     let userId = setUserId();
     props.setUser(userId);
     props.receiveStatus(userId);
-  },[])
+  },[props.router.params.userId])
 
   let userId = setUserId();
   if(!userId) return <Navigate to="/login" />
 
   return (
 
-    <Profile {...props} />
+    <Profile {...props}
+      isOwner={!props.router.params.userId}
+      />
   );
 };
 
@@ -56,7 +58,7 @@ function withRouter(Component){
 }
 
 export default compose(
-  connect(mapStateToProps,{setUser, receiveStatus, updateStatus}),
+  connect(mapStateToProps,{setUser, receiveStatus, updateStatus, savePhoto}),
   withRouter,
   //withAuthRedirect,
 )(ProfileContainer)

@@ -6,15 +6,16 @@ import { login } from "../../redux/auth-reducer.js";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import s from "../common/FormsControls/FormsControls.module.css"
+import {getCaptchaUrl, getIsAuth} from "../../redux/auth-selectors"
 
 const LoginForm = (props) =>{
     const inputValidatorML30 = textareaValidatorСreator(30);
     return(
         <div>
             <Formik
-            initialValues={{ email: '', password: '', rememberMe: false }}
-            onSubmit={(value,{ setStatus }) =>{
-                props.login(value.email, value.password, value.rememberMe, setStatus);
+            initialValues={{ email: '', password: '', rememberMe: false, captcha: '' }}
+            onSubmit={(value,{ setStatus, status}) =>{
+                props.login(value.email, value.password, value.rememberMe, value.captcha, setStatus);
             }}
             >
             {(props) => (
@@ -39,7 +40,18 @@ const LoginForm = (props) =>{
                         type="checkbox"
                         component={FormControl}
                         inputname="input"
+                        
                     />
+                    {props.status && props.status.captcha && <div>
+                            <img src={props.status.captcha}/>
+                            <p>Введите капчу</p>
+                            <Field 
+                                name="captcha"
+                                component={FormControl}
+                                inputname="input"
+                                validate={inputValidatorML30}
+                            />
+                        </div>}
                     <button type="submit">
                         Submit
                     </button>
@@ -58,13 +70,14 @@ const Login = (props) =>{
     return(
         <div>
             <h1>login</h1>
-            <LoginForm serverAnswer={props.serverAnswer} login={props.login} />
+            <LoginForm captchaUrl={props.captchaUrl} login={props.login} />
         </div>
     )
 }
 
 const mapStateToProps=(state)=>({
-    isAuth: state.auth.isAuth,
+    isAuth: getIsAuth(state),
+    captchaUrl: getCaptchaUrl(state)
 })
 
 export default connect(mapStateToProps,{login})(Login);

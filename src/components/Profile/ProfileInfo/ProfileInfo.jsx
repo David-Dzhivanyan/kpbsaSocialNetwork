@@ -7,11 +7,20 @@ const ProfileInfo = (props) => {
   if(!props.profile){
     return <Preloader />
   }
-  let imgSrc = props.profile.photos.large ? props.profile.photos.large : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg'
 
+  const onMainPhotoSelected = (e) =>{
+    if(e.target.files.length === 1){
+      props.savePhoto(e.target.files[0])
+    } 
+
+  }
+
+  let imgSrc = props.profile.photos.large ? props.profile.photos.large : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg'
+  console.log(props.profile);
   return(
     <div className={s.content}>
       <img className={s.avatar} src={imgSrc}/>
+      {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}></input>}
       <span><ProfileStatus status={props.status} updateStatus={props.updateStatus}/></span>
       <span>{props.profile.fullName}</span>
     </div>
