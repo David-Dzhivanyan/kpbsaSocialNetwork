@@ -1,0 +1,11 @@
+.item{
+    display: flex;
+    margin-bottom: 10px;
+}
+.author_photo{
+    border-radius: 50%;
+    width: 50px;
+}
+.post_text{
+    align-self: center;
+}

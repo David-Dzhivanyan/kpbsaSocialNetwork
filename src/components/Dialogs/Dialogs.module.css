@@ -1,0 +1,13 @@
+.content{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.messages_wrapper{
+    background-color:rgb(75, 75, 75);
+    border-radius: 5px;
+    padding: 10px;
+    margin:10px
+}
+.send_message{
+    display: flex;
+}

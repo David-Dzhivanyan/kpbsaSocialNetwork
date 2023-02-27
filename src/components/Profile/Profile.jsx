@@ -1,0 +1,18 @@
+import React from "react";
+import s from './Profile.module.css'
+import MyPostsContainer from './MyPosts/MyPostsContainer.jsx'
+import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx"
+
+const Profile = (props) => {
+    return (
+      <div className={s.content}>
+        <div className={s.img_wrapper}>
+          <img src='https://opelik417.github.io/CPBUA-landing-page/assets/logo-light.png'/>
+        </div>
+        <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+        <MyPostsContainer />
+      </div>
+    );
+};
+
+export default Profile;

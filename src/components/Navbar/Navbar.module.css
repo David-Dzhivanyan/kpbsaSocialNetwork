@@ -1,0 +1,25 @@
+.nav{
+    grid-area: n;
+    background-color:rgb(75, 75, 75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+.item{
+    text-decoration: none;
+    display: block;
+    color: azure;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgb(110,110,110);
+    text-align: center;
+    padding: 10px;
+    margin-top:10px
+}
+.active{
+    color:black;
+}
+

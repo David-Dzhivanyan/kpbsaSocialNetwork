@@ -1,0 +1,11 @@
+.dialog{
+    border-radius: 5px;
+    background-color:rgb(75, 75, 75);
+    text-align: center;
+    padding: 10px;
+    margin:10px
+}
+.dialog a{
+    text-decoration: none;
+    color: white
+}   
