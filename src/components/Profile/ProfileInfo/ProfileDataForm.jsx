@@ -6,7 +6,7 @@ import { Contacts } from "./ProfileInfo.jsx";
 import s from "./ProfileInfo.module.css"
 
 const ProfileDataForm = (props) =>{
-    const textareaValidatorСreator15 = textareaValidatorСreator(15);
+    const textareaValidatorСreator20 = textareaValidatorСreator(20);
     const textareaValidatorСreator100 = textareaValidatorСreator(100);
     return (
         <div className={s.profile_info}>
@@ -20,38 +20,39 @@ const ProfileDataForm = (props) =>{
             >
             {(props)=>(
                 <Form onSubmit={props.handleSubmit}>
-                    <label>full Name</label>
+                    <label htmlFor="fullName" className={s.text_bold}>Full name:</label>
                     <Field
+                        id="fullName"
                         placeholder="fullName"
                         name="fullName"
                         component={FormControl}
                         inputname="input"
-                        validate={textareaValidatorСreator15}
+                        validate={textareaValidatorСreator20}
                     />
-                    <label>Looking for a job:</label>
+                    <label htmlFor="lookingForAJob" className={s.text_bold}>Looking for a job:</label>
                     <Field
                         name="lookingForAJob"
                         type="checkbox"
                         component={FormControl}
                         inputname="input"
                     />
-                    <label>looking For A Job Description:</label>
+                    <label htmlFor="lookingForAJobDescription" className={s.text_bold}>My professional skills:</label>
                     <Field
                         placeholder="looking For A Job Description"
                         name="lookingForAJobDescription"
                         component={FormControl}
-                        inputname="input"
+                        inputname="textarea"
                         validate={textareaValidatorСreator100}
                     />
-                    <label>about Me:</label>
+                    <label htmlFor="aboutMe" className={s.text_bold}>About me:</label>
                     <Field
                         placeholder="about Me"
                         name="aboutMe"
                         component={FormControl}
-                        inputname="input"
+                        inputname="textarea"
                         validate={textareaValidatorСreator100}
                     />
-                    <button type="submit">submit</button>
+                    <button className={s.edit_mode_btn} type="submit">Submit</button>
                 </Form>
             )}
 

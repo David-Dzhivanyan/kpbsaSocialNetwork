@@ -7,7 +7,7 @@ const ProfileStatus = (props) =>{
     const [status, setStatus] = useState(props.status);
 
     const activateEditMode = () => {
-        setEditMode(true)
+        if(props.isOwner){setEditMode(true)}
     }
 
     const deactivateEditMode = () => {
@@ -27,12 +27,12 @@ const ProfileStatus = (props) =>{
         <div>
             {!editMode &&
                 <div>
-                <b>status:</b> <span onDoubleClick={activateEditMode}>{props.status || 'status is undefined'}</span>
+                    <span className={s.status} onDoubleClick={activateEditMode}>{props.status || 'status is undefined'}</span>
                 </div>
             }
-            {editMode && 
+            {editMode && props.isOwner &&
                 <div>
-                <b>status:</b><input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={status}/>
+                    <input className={s.status} onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={status}/>
                 </div>
             }
         </div>

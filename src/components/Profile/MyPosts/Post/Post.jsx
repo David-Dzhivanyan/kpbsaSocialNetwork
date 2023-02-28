@@ -5,7 +5,10 @@ const Post = (props) => {
 
     return (
       <div className={s.item}>
-        <img className={s.author_photo} src={props.profile.photos.large || "https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg"} />
+        <div className={s.post_header}>
+          <img className={s.author_photo} src={props.profile.photos.large || "https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg"} />
+          <span>{props.profile.fullName}</span>
+        </div>
         <div className={s.post_text}>{props.text}</div>
       </div>
     );

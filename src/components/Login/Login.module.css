@@ -1,0 +1,30 @@
+.title{
+    margin-bottom: 10px;
+}
+
+.form_wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.formik{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.remember_me{
+    display: flex;
+}
+.captcha{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.submit_btn{
+    margin-top: 10px;
+    width: 60px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+}

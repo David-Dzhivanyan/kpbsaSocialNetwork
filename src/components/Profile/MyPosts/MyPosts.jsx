@@ -23,7 +23,7 @@ const AddPostForm = (props) =>{
                       validate={validatorMaxLength20}
                       inputname="textarea"
                   />
-                  <button  type="submit">Опубликовать</button>
+                  <button className={s.add_post_btn}  type="submit">Publish</button>
               </Form>
           )}
       </Formik>
@@ -36,11 +36,11 @@ const MyPosts = (props) => {
 
   return (
     <div className={s.posts}>
-      <div>
-        <h4> New post</h4>
+      {props.isOwner && <div>
+        <h4 className={s.new_post_title}> New post</h4>
         <AddPostForm addPost={props.addPost}/>
-      </div>
-      <h3> My post </h3>
+      </div>}
+      <h3 className={s.new_post_title}> Posts </h3>
       {
         postElements
       }

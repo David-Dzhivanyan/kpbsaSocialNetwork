@@ -4,3 +4,14 @@
 .new_post_form{
     display: flex;
 }
+.add_post_btn{
+    width: 80px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 12px;
+}
+.new_post_title{
+    margin-bottom: 10px;
+}

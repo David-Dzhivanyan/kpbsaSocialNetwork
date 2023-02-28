@@ -5,13 +5,14 @@ import {textareaValidatorСreator} from "../../utils/validators/validators.js"
 import { login } from "../../redux/auth-reducer.js";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
-import s from "../common/FormsControls/FormsControls.module.css"
+import FormStyles from "../common/FormsControls/FormsControls.module.css"
 import {getCaptchaUrl, getIsAuth} from "../../redux/auth-selectors"
+import s from "./Login.module.css"
 
 const LoginForm = (props) =>{
     const inputValidatorML30 = textareaValidatorСreator(30);
     return(
-        <div>
+        <div >
             <Formik
             initialValues={{ email: '', password: '', rememberMe: false, captcha: '' }}
             onSubmit={(value,{ setStatus,}) =>{
@@ -19,7 +20,7 @@ const LoginForm = (props) =>{
             }}
             >
             {(props) => (
-                <Form onSubmit={props.handleSubmit}>
+                <Form className={s.formik} onSubmit={props.handleSubmit}>
                     <Field
                         placeholder="email"
                         name="email"
@@ -30,31 +31,36 @@ const LoginForm = (props) =>{
                     <Field
                         placeholder="password"
                         name="password"
+                        type="password"
                         component={FormControl}
                         inputname="input"
                         validate={inputValidatorML30}
                     />
-                    <label>Remember Me</label>
-                    <Field 
-                        name="rememberMe"
-                        type="checkbox"
-                        component={FormControl}
-                        inputname="input"
-                    />
-                    {props.status && props.status.captcha && <div>
+                    <div className={s.remember_me}>
+                        <label htmlFor="rememberMe"> Remember Me </label>
+                        <Field
+                            id="rememberMe"
+                            name="rememberMe"
+                            type="checkbox"
+                            component={FormControl}
+                            inputname="input"
+                        />
+                    </div>
+                    {props.status && props.status.captcha && <div className={s.captcha}>
                             <img src={props.status.captcha}/>
-                            <p>Введите капчу</p>
-                            <Field 
+                            <label className={s.label_captcha} htmlFor="captcha">Enter captcha:</label>
+                            <Field
+                                id="captcha"
                                 name="captcha"
                                 component={FormControl}
                                 inputname="input"
                                 validate={inputValidatorML30}
                             />
                         </div>}
-                    <button type="submit">
+                    <button className={s.submit_btn} type="submit">
                         Submit
                     </button>
-                    {props.status && <div className={s.statusMessage}>{props.status.error}</div>}
+                    {props.status && <div className={FormStyles.statusMessage}>{props.status.error}</div>}
                 </Form>
             )}
             </Formik>
@@ -67,8 +73,8 @@ const Login = (props) =>{
         return <Navigate to={"/profile"} />
     }
     return(
-        <div>
-            <h1>login</h1>
+        <div className={s.form_wrapper}>
+            <h1 className={s.title}>Login</h1>
             <LoginForm captchaUrl={props.captchaUrl} login={props.login} />
         </div>
     )

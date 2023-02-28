@@ -1,19 +1,40 @@
 .content{
-    display: grid;
-    grid-template-columns: 3fr 12fr;
-    padding: 10px;
+    display: flex;
 }
 .avatar{
     width: 150px;
-}
-.upload_avatar{
-    width: 105px;
-    height: 100px;
+    height: 150px;
 }
 .profile_info{
     display: flex;
     flex-direction: column;
 }
-.contacts{
-    margin-left: 20px;
+.avatar_wrapper{
+    width: 160px;
+}
+.status{
+    width: 150px;
+}
+.text_bold{
+    font-weight: 500;
+}
+.upload_avatar_input{
+    display: none;
+}
+.upload_avatar{
+    display: block;
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+.edit_mode_btn{
+    width: 60px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
 }

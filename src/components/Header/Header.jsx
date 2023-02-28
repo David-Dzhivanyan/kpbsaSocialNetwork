@@ -8,8 +8,8 @@ const Header = (props) => {
             <img src='https://opelik417.github.io/CPBUA-landing-page/assets/icon.jpg' />
             <div> 
                 { props.isAuth 
-                ? <button onClick={props.logout}>logout</button> 
-                : <NavLink to={'/login'}><button>login</button></NavLink>}
+                ? <button className={s.login_btn} onClick={props.logout}>Logout</button> 
+                : <NavLink to={'/login'}><button className={s.login_btn}>Login</button></NavLink>}
             </div>
         </header>
     );
