@@ -15,8 +15,7 @@ const ProfileInfo = (props) => {
 
   }
 
-  let imgSrc = props.profile.photos.large ? props.profile.photos.large : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg'
-  console.log(props.profile);
+  let imgSrc = props.profile.photos.large ? props.profile.photos.large : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg';
   return(
     <div className={s.content}>
       <img className={s.avatar} src={imgSrc}/>

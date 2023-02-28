@@ -16,6 +16,7 @@ import Preloader from './components/common/preloader/preloader';
 import {Provider} from 'react-redux';
 import { BrowserRouter} from 'react-router-dom';
 import store from './redux/redux-store.js';
+import { Navigate } from "react-router-dom";
 
 const App = (props) => {
 
@@ -33,6 +34,12 @@ const App = (props) => {
       <Navbar />
       <div className='app-wrapper-content'>
         <Routes>
+          <Route 
+            path="/" 
+            element={
+              <Navigate to="/profile" />
+            } 
+          />
           <Route 
             path='/profile/:userId?' 
             element={

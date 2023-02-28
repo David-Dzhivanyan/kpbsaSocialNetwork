@@ -40,7 +40,6 @@ const LoginForm = (props) =>{
                         type="checkbox"
                         component={FormControl}
                         inputname="input"
-                        
                     />
                     {props.status && props.status.captcha && <div>
                             <img src={props.status.captcha}/>
