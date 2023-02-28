@@ -1,7 +1,7 @@
 import React, { useEffect, } from "react";
 import Profile from "./Profile.jsx"
 import { connect } from "react-redux";
-import { setUser, receiveStatus, updateStatus, savePhoto} from "../../redux/profile-reducer";
+import { setUser, receiveStatus, updateStatus, savePhoto, saveProfile} from "../../redux/profile-reducer";
 import { useLocation, useNavigate, useParams} from "react-router-dom";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect.js";
 import { compose } from "redux";
@@ -58,6 +58,6 @@ function withRouter(Component){
 }
 
 export default compose(
-  connect(mapStateToProps,{setUser, receiveStatus, updateStatus, savePhoto}),
+  connect(mapStateToProps,{setUser, receiveStatus, updateStatus, savePhoto, saveProfile}),
   withRouter,
 )(ProfileContainer)

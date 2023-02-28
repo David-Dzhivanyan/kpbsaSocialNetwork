@@ -1,8 +1,19 @@
 .content{
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 12fr;
     padding: 10px;
 }
 .avatar{
     width: 150px;
+}
+.upload_avatar{
+    width: 105px;
+    height: 100px;
+}
+.profile_info{
+    display: flex;
+    flex-direction: column;
+}
+.contacts{
+    margin-left: 20px;
 }

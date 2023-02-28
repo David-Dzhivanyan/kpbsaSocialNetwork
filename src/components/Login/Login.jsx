@@ -14,7 +14,7 @@ const LoginForm = (props) =>{
         <div>
             <Formik
             initialValues={{ email: '', password: '', rememberMe: false, captcha: '' }}
-            onSubmit={(value,{ setStatus, status}) =>{
+            onSubmit={(value,{ setStatus,}) =>{
                 props.login(value.email, value.password, value.rememberMe, value.captcha, setStatus);
             }}
             >
