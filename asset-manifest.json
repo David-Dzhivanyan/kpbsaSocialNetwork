@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kpbsa-social-network/static/css/main.2fd88bcb.css",
-    "main.js": "/kpbsa-social-network/static/js/main.d483c9aa.js",
+    "main.css": "/kpbsa-social-network/static/css/main.2357ba5d.css",
+    "main.js": "/kpbsa-social-network/static/js/main.2029b52c.js",
     "static/js/787.cc27f801.chunk.js": "/kpbsa-social-network/static/js/787.cc27f801.chunk.js",
     "index.html": "/kpbsa-social-network/index.html",
     "static/media/preloader.svg": "/kpbsa-social-network/static/media/preloader.dc7b56ee49c04e169bc75ec04137accb.svg",
-    "main.2fd88bcb.css.map": "/kpbsa-social-network/static/css/main.2fd88bcb.css.map",
-    "main.d483c9aa.js.map": "/kpbsa-social-network/static/js/main.d483c9aa.js.map",
+    "main.2357ba5d.css.map": "/kpbsa-social-network/static/css/main.2357ba5d.css.map",
+    "main.2029b52c.js.map": "/kpbsa-social-network/static/js/main.2029b52c.js.map",
     "787.cc27f801.chunk.js.map": "/kpbsa-social-network/static/js/787.cc27f801.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fd88bcb.css",
-    "static/js/main.d483c9aa.js"
+    "static/css/main.2357ba5d.css",
+    "static/js/main.2029b52c.js"
   ]
 }
