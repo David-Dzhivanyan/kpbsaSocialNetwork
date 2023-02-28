@@ -17,7 +17,7 @@ let initialState ={
 const profileReducer = (state = initialState, action) => {
     if(action.type === ADD_POST){
         let newPost = {
-            id: 5,
+            id: state.postData.length + 1,
             text: action.text,
             likesCount: 0,
         };

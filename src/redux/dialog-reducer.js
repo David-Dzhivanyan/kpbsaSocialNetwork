@@ -22,7 +22,7 @@ const dialogReducer = (state=initialState , action) => {
 
     if(action.type === SEND_MESSAGE){
         let newMessage = {
-            id: 5,
+            id: state.messagesData.length + 1,
             message: action.text,
         }
         return {

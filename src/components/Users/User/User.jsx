@@ -6,44 +6,39 @@ let User = (props) => {
 
     return (
         <div>
-                <br/>
-                {
-                props.users.map(u => 
+            <span>
                 <div>
-                    <span>
-                        <div>
-                            <NavLink to={'/profile/' + u.id}>
-                            <img className={s.avatar}
-                                src={u.photos.small != null 
-                                ? u.photos.small 
-                                : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg'}
-                            />
-                            </NavLink>
-                        </div>
-                        <div>
-                            {u.followed 
-                                ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                    props.unfollowTC(u.id);
-
-                                } }>Unfollow</button> 
-                                : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                    props.followTC(u.id);
-
-                                } }>Follow</button>}
-                        </div>
-                    </span>
-                    <span>
-                        <span>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-                        </span>
-                        <span>
-                            <br />
-                        </span>
-                    </span>
+                    <NavLink to={'/profile/' + props.id}>
+                    <img className={s.avatar}
+                        src={props.photo != null 
+                        ? props.photo
+                        : 'https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg'}
+                    />
+                    </NavLink>
                 </div>
-                )}
+                <div>
+                    {props.followed 
+                        ? <button disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
+                            props.unfollowTC(props.id);
+
+                        } }>Unfollow</button> 
+                        : <button disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
+                            props.followTC(props.id);
+
+                        } }>Follow</button>}
+                </div>
+            </span>
+            <span>
+                <span>
+                    <div>{props.name}</div>
+                    <div>{props.status}</div>
+                </span>
+                <span>
+                    <br />
+                </span>
+            </span>
         </div>
-    )};
+    )
+};
 
     export default User;

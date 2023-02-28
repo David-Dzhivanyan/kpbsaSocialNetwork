@@ -32,7 +32,7 @@ const AddPostForm = (props) =>{
 
 const MyPosts = (props) => {
   let postElements = props.postData
-    .map(p=> <Post text={p.text} />);
+    .map(p=> <Post key={p.id} profile={props.profile} text={p.text} />);
 
   return (
     <div className={s.posts}>

@@ -21,19 +21,28 @@ let Paginator = (props) => {
                 <button onClick={()=>setPortionNumber(portionNumber-1)}> PREV </button>
             }
             {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
-            .map(p => {
-                return <span 
-                    className={props.currentPage === p ? s.selectPage : ''}
-                    onClick={()=>{props.onPageChanged(p)}}
-                    >
-                        {p}
-                    </span>
-            })}
+            .map(p => <SeparatePage
+                key={p}
+                p={p} 
+                currentPage={props.currentPage} 
+                onPageChanged={props.onPageChanged} 
+            />)}
             {
                 portionNumber !== portionCount && 
                 <button onClick={()=>setPortionNumber(portionNumber+1)}> NEXT </button>
             }
         </div>
-    )};
+)};
+
+const SeparatePage = (props) => {
+    return(
+        <span 
+            className={props.currentPage === props.p ? s.selectPage : ''}
+            onClick={()=>{props.onPageChanged(props.p)}}
+            >
+                {props.p}
+        </span>
+    )
+}
 
 export default Paginator;

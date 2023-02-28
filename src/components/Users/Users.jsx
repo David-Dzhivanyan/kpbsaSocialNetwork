@@ -5,7 +5,17 @@ import User from "./User/User";
 import s from './Users.module.css';
 
 let Users = (props) => {
-
+    let users = props.users.map(u => <User
+        key={u.id} 
+        id={u.id} 
+        photo={u.photos.small} 
+        followed={u.followed}
+        unfollowTC={props.unfollowTC}
+        followTC={props.followTC}
+        name={u.name}
+        status={u.status}
+        followingInProgress={props.followingInProgress}
+    />)
     return (
         <div>
             <Paginator 
@@ -15,7 +25,9 @@ let Users = (props) => {
                 onPageChanged={props.onPageChanged}
                 portionSize={10}
             />
-            <User {...props} />
+            {
+                users
+            }
         </div>
     )};
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, } from "react";
 import Profile from "./Profile.jsx"
 import { connect } from "react-redux";
 import { setUser, receiveStatus, updateStatus, savePhoto} from "../../redux/profile-reducer";
@@ -60,5 +60,4 @@ function withRouter(Component){
 export default compose(
   connect(mapStateToProps,{setUser, receiveStatus, updateStatus, savePhoto}),
   withRouter,
-  //withAuthRedirect,
 )(ProfileContainer)

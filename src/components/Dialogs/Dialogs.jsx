@@ -34,9 +34,9 @@ const AddMessageForm = (props) =>{
 
 const Dialogs = (props) =>{
     let dialogsElements=props.dialogsData
-        .map(d => <DialogItem id={d.id} name={d.name} />);
+        .map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
     let messagesElements=props.messagesData
-        .map(m => <Message message={m.message}/>);
+        .map(m => <Message key={m.id} message={m.message}/>);
 
 
     return(
