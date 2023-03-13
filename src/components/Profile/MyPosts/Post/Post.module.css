@@ -1,4 +1,4 @@
-.item{
+.post{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -9,12 +9,36 @@
     width: 400px;
     border-radius: 8px;
 }
+.post_author{
+    display: flex;
+}   
 .author_photo{
     border-radius: 50%;
     width: 50px;
+}
+.author_name{
+    margin-left: 5px;
+}
+
+.change_post_btn{
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.textarea{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .post_header{
     display: flex;
     margin-bottom: 10px;
+    justify-content: space-between;
+}
+.change_post_text{
+    width: 15px;
+    height: 15px;
 }

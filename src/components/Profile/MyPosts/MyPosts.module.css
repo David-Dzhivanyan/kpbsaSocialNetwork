@@ -1,17 +1,22 @@
-.posts{
+.post_container{
     padding: 10px;
 }
-.new_post_form{
-    display: flex;
-}
 .add_post_btn{
-    width: 80px;
-    height: 20px;
     background-color: white;
     border: 1px solid black;
-    border-radius: 5%;
+    border-radius: 5px;
     font-size: 12px;
+    height: 20px;
+}
+.textarea{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .new_post_title{
     margin-bottom: 10px;
+}
+.posts_wrapper{
+    display: flex;
+    flex-direction: column-reverse;
 }

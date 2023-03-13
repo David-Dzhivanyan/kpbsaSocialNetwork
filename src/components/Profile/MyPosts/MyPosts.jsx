@@ -22,6 +22,7 @@ const AddPostForm = (props) =>{
                       component={FormControl}
                       validate={validatorMaxLength20}
                       inputname="textarea"
+                      className={s.textarea}
                   />
                   <button className={s.add_post_btn}  type="submit">Publish</button>
               </Form>
@@ -32,18 +33,20 @@ const AddPostForm = (props) =>{
 
 const MyPosts = (props) => {
   let postElements = props.postData
-    .map(p=> <Post key={p.id} profile={props.profile} text={p.text} />);
+    .map(p=> <Post changePostText={props.changePostText} key={p.id} id={p.id} profile={props.profile} text={p.text} />);
 
   return (
-    <div className={s.posts}>
+    <div className={s.post_container}>
       {props.isOwner && <div>
         <h4 className={s.new_post_title}> New post</h4>
         <AddPostForm addPost={props.addPost}/>
       </div>}
       <h3 className={s.new_post_title}> Posts </h3>
-      {
-        postElements
-      }
+      <div className={s.posts_wrapper}> 
+        {
+          postElements
+        }
+      </div>
     </div>
   );
 }
