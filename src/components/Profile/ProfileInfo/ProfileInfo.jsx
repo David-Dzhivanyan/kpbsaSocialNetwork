@@ -18,10 +18,12 @@ const ProfileInfo = (props) => {
     <div className={s.content}>
       <div className={s.avatar_wrapper}>
         <img className={s.avatar} src={imgSrc}/>
-        {props.isOwner && <div>
+        {props.isOwner 
+        ? <div>
           <label className={s.upload_avatar} htmlFor="uploadAvatar">Change avatar</label>
           <input id="uploadAvatar" className={s.upload_avatar_input} type={"file"} onChange={onMainPhotoSelected}></input>
-        </div>}
+        </div> 
+        : <div></div>}
       </div>
       <div>
         <span><ProfileStatus isOwner={props.isOwner} status={props.status} updateStatus={props.updateStatus}/></span>

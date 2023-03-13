@@ -5,8 +5,8 @@ import s from '../Users.module.css';
 let User = (props) => {
 
     return (
-        <div>
-            <span>
+        <div className={s.user}>
+            <div className={s.user_header}>
                 <div>
                     <NavLink to={'/profile/' + props.id}>
                     <img className={s.avatar}
@@ -16,27 +16,26 @@ let User = (props) => {
                     />
                     </NavLink>
                 </div>
+                <div className={s.user_info}>
+                    <NavLink className={s.user_info_link} to={'/profile/' + props.id}>
+                        <div>{props.name}</div>
+                        <div>{props.status}</div>
+                    </NavLink>
+                </div>
+            </div>
+            <div>
                 <div>
                     {props.followed 
-                        ? <button disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
+                        ? <button className={s.follow_btn} disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
                             props.unfollowTC(props.id);
 
                         } }>Unfollow</button> 
-                        : <button disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
+                        : <button className={s.follow_btn} disabled={props.followingInProgress.some(id => id === props.id)} onClick={() => {
                             props.followTC(props.id);
 
                         } }>Follow</button>}
                 </div>
-            </span>
-            <span>
-                <span>
-                    <div>{props.name}</div>
-                    <div>{props.status}</div>
-                </span>
-                <span>
-                    <br />
-                </span>
-            </span>
+            </div>
         </div>
     )
 };

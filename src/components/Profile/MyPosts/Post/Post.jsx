@@ -44,7 +44,7 @@ const Post = (props) => {
             <img className={s.author_photo} src={props.profile.photos.large || "https://pp.userapi.com/c840729/v840729427/8a1ca/GO_-t2wviMY.jpg"} />
             <span className={s.author_name}>{props.profile.fullName}</span>
           </div>
-          {!editPostMode && <button onClick={() => setEditPostMode(true)} className={s.change_post_btn}>Change</button>}
+          {!editPostMode && props.isOwner && <button onClick={() => setEditPostMode(true)} className={s.change_post_btn}>Change</button>}
         </div>
         {editPostMode 
         ? <ChangePostForm setEditPostMode={setEditPostMode} id={props.id} changePostText={props.changePostText} text={props.text} />

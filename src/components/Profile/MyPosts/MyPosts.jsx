@@ -33,7 +33,7 @@ const AddPostForm = (props) =>{
 
 const MyPosts = (props) => {
   let postElements = props.postData
-    .map(p=> <Post changePostText={props.changePostText} key={p.id} id={p.id} profile={props.profile} text={p.text} />);
+    .map(p=> <Post isOwner={props.isOwner} changePostText={props.changePostText} key={p.id} id={p.id} profile={props.profile} text={p.text} />);
 
   return (
     <div className={s.post_container}>

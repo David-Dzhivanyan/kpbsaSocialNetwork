@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import {FormControl} from "../../common/FormsControls/FormsControls"
 import {textareaValidatorСreator} from "../../../utils/validators/validators.js"
-import { Contacts } from "./ProfileInfo.jsx";
 import s from "./ProfileInfo.module.css"
 
 const ProfileDataForm = (props) =>{

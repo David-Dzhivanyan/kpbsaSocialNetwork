@@ -9,16 +9,17 @@ let Paginator = (props) => {
         pages.push(i);
     }
     
-    let portionCount = Math.ceil(props.pagesCount/props.portionSize);
+    let portionCount = Math.ceil(pagesCount/props.portionSize);
     let [portionNumber, setPortionNumber] = useState(1);
     let leftPortionPageNumber = (portionNumber - 1) * props.portionSize + 1;
-    let rightPortionPageNumber = portionNumber * props.portionSize
+    let rightPortionPageNumber = portionNumber * props.portionSize;
 
     return (
-        <div>
+        <div className={s.paginator}>
             {
-                portionNumber > 1 && 
-                <button onClick={()=>setPortionNumber(portionNumber-1)}> PREV </button>
+                portionNumber > 1 
+                ? <button className={s.active_btn} onClick={()=>setPortionNumber(portionNumber-1)}> PREV </button>
+                : <button className={s.disabled_btn} > PREV </button>
             }
             {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
             .map(p => <SeparatePage
@@ -28,8 +29,9 @@ let Paginator = (props) => {
                 onPageChanged={props.onPageChanged} 
             />)}
             {
-                portionNumber !== portionCount && 
-                <button onClick={()=>setPortionNumber(portionNumber+1)}> NEXT </button>
+                portionNumber < portionCount  
+                ? <button className={s.active_btn} onClick={()=>setPortionNumber(portionNumber+1)}> NEXT </button>
+                : <button className={s.disabled_btn} > NEXT </button>
             }
         </div>
 )};
@@ -37,7 +39,7 @@ let Paginator = (props) => {
 const SeparatePage = (props) => {
     return(
         <span 
-            className={props.currentPage === props.p ? s.selectPage : ''}
+            className={props.currentPage === props.p ? `${s.select_page} ${s.page_number}` : s.page_number}
             onClick={()=>{props.onPageChanged(props.p)}}
             >
                 {props.p}
